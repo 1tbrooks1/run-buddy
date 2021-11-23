@@ -15,6 +15,14 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position:-webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-image: url("../images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: 80%;
 }
 
 header h1 {
@@ -22,6 +30,7 @@ header h1 {
     font-size: 36px;
     color: #fce138;
     margin: 0;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 header a {
@@ -41,10 +50,11 @@ header nav ul {
     list-style: none;
 }
 
-header nav ul li a {
+header nav ul li a:hover {
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 footer {
@@ -83,15 +93,18 @@ section {
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
+    background-attachment: fixed;
+    background-position: 80%;
 }
 
-.hero-form{
+.hero-form {
     background-color: #fce138;
     padding: 20px;
     color: #024e76;
     border: solid 3px #024e76;
     width: 40%;
     margin: 3.5%;
+    border-radius: 15px;
 }
 
 .hero-form h3 {
@@ -101,6 +114,7 @@ section {
 
 hero-form p {
     margin: 5px 0 15px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5)
 }
 
 .hero-cta {
@@ -116,6 +130,7 @@ hero-form p {
     font-style: italic;
     font-size: 55px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .form-input {
@@ -126,18 +141,26 @@ hero-form p {
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: rgba(255.255,355,0.75)
+}
+
+.form-input:focus {
+    background-color: rgba(255,255,255,1);
+    outline: none;
 }
 
 .hero-form label {
     margin: 0 5px;
 }
 
-.hero-form button {
+.hero-form button:hover {
     color: #fce138;
     background-color: #024e76;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 10px;
 }
 
 .intro p {
@@ -192,11 +215,15 @@ hero-form p {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
+   
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+}
+
+.step:nth-child(even) {
+    border-bottom: 1px solid #39a6b2;
 }
 
 .step-text p {
@@ -335,9 +362,15 @@ hero-form p {
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
+    border-radius: 10px;
 }
 
-.contact-form button {
+.contact-form input:focus, .contact-form textarea:focus {
+    
+}
+
+
+.contact-form button:hover {
     width: 100%;
     border: none;
     background: #fce138;
@@ -345,6 +378,7 @@ hero-form p {
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
+    border-radius: 10px;
 }
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
@@ -352,6 +386,7 @@ hero-form p {
   header {
       padding-bottom: 0;
       justify-content: center;
+      position: relative;
   }
 
   header h1 {
